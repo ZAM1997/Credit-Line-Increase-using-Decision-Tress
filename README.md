@@ -1,16 +1,12 @@
-# DNSC-6301
-
 # Credit Line Increase Model Card
+
 ### Basic Information
-* **Person or organization developing model**: 
-* Prithak Kumar Bhattacharyya, `pkbhatta_5@gwmail.gwu.edu`
-* Ziyad Maknojia, 'zam@gwmail.gwu.edu'
-* Jenny Choi, 'jihyechoi@gwmail.gwu.edu'
-* Kaixu Yu, 'kyutony98@gwmail.gwu.edu'
+
+* **Person or organization developing model**: Patrick Hall, `jphall@gwu.edu`
 * **Model date**: August, 2021
 * **Model version**: 1.0
 * **License**: MIT
-* **Model implementation code**: [DNSC_6301_Example_Project.ipynb](https://github.com/pkbhatta5/DNSC-6301/blob/main/DNSC_6301_Group_Project.ipynb)
+* **Model implementation code**: [DNSC_6301_Example_Project.ipynb](DNSC_6301_Example_Project.ipynb)
 
 ### Intended Use
 * **Primary intended uses**: This model is an *example* probability of default classifier, with an *example* use case for determining eligibility for a credit line increase.
@@ -18,7 +14,9 @@
 * **Out-of-scope use cases**: Any use beyond an educational example is out-of-scope.
 
 ### Training Data
+
 * Data dictionary: 
+
 | Name | Modeling Role | Measurement Level| Description|
 | ---- | ------------- | ---------------- | ---------- |
 |**ID**| ID | int | unique row indentifier |
@@ -32,17 +30,18 @@
 | **BILL_AMT1 - BILL_AMT6** | inputs | float | amount of bill statement; BILL_AMNT1 = amount of bill statement in September, 2005; BILL_AMT2 = amount of bill statement in August, 2005; ...; BILL_AMT6 = amount of bill statement in April, 2005 |
 | **PAY_AMT1 - PAY_AMT6** | inputs | float | amount of previous payment; PAY_AMT1 = amount paid in September, 2005; PAY_AMT2 = amount paid in August, 2005; ...; PAY_AMT6 = amount paid in April, 2005 |
 | **DELINQ_NEXT**| target | int | whether a customer's next payment is delinquent (late), 1 = late; 0 = on-time |
-* **Source of training data**: GWU Blackboard, email `pkbhatta_5@gwu.edu` for more information
+
+* **Source of training data**: GWU Blackboard, email `jphall@gwu.edu` for more information
 * **How training data was divided into training and validation data**: 50% training, 25% validation, 25% test
 * **Number of rows in training and validation data**:
   * Training rows: 15,000
   * Validation rows: 7,500
-  * Columns: 20
- 
+
 ### Test Data
-* **Source of test data**: GWU Blackboard, email `pkbhatta_5@gwu.edu` for more information
+* **Source of test data**: GWU Blackboard, email `jphall@gwu.edu` for more information
 * **Number of rows in test data**: 7,500
 * **State any differences in columns between training and test data**: None
+
 
 ### Model Details
 * **Columns used as inputs in the final model**: 'LIMIT_BAL', 'PAY_0', 'PAY_2', 'PAY_3', 'PAY_4', 'PAY_5', 'PAY_6', 'BILL_AMT1', 'BILL_AMT2', 'BILL_AMT3', 'BILL_AMT4', 'BILL_AMT5', 'BILL_AMT6', 'PAY_AMT1', 'PAY_AMT2', 'PAY_AMT3', 'PAY_AMT4', 'PAY_AMT5', 'PAY_AMT6'
@@ -80,7 +79,8 @@
 *	Line plots showing 
 *	Bar chart
 
-* **Comparison between different models**:
+### Additional Analysis:
+***Comparison between different models***:
 * For the model comparison, we implemented the Support Vector Machines(SVM) and found that it learnt more about the 0's in the target varibale than the 1's as the data consists of more 0's
 * The accuracy for predicting the 0's was approximately 77% and that for the 1's was 50% 
 * The decision tree out-performed the Support Vector Machines
